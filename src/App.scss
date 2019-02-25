@@ -1,5 +1,6 @@
 
 @import 'filter.scss';
+@import 'content.scss';
 
 
 * {
@@ -29,4 +30,8 @@ header {
       margin: 0 15px;
     }
   }
+}
+
+.content-area {
+  display: flex;
 }

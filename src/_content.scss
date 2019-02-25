@@ -1,0 +1,47 @@
+.content {
+    height: 1300px;
+    width: 100%;
+    margin: 10px;
+    .results-sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+            margin-left: 10px;
+        }
+        select {
+            margin-right: 10px;
+            height: 35px;
+            width: 250px;
+            padding: 2px;
+        }
+    }
+    .films-container {
+        margin: 0 30px;
+        background: grey;
+        min-height: 1050px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        .film {
+            position: relative;
+            margin: 10px 25px;
+            width: 240px;
+            height: 315px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            .film-info {
+                position: absolute;
+                top: 0;
+                color: white;
+            }
+        }
+    }
+}

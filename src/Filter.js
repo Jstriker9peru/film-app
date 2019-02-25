@@ -7,7 +7,7 @@ export default class Filter extends Component {
         <div className="filter-section">
           <div className="genres">
             <h1>Genres</h1>
-            <input type="text" />
+            <input type="text" placeholder="Search for a Genre" />
             <div className="genre-container">
               <div className="genre-name">
                 <label for="genre">
@@ -76,7 +76,7 @@ export default class Filter extends Component {
 
           <div className="languages">
             <h1>Languages</h1>
-            <input type="text" />
+            <input type="text" placeholder="Search for a Language" />
             <div className="languages-container">
               <div className="language">
                 <label for="language">
@@ -128,8 +128,7 @@ export default class Filter extends Component {
               <input type="text" value="End date"></input>
             </div>
           </div>
-
-
+          
         </div>
       </div>
 
