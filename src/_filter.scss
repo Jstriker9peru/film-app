@@ -1,0 +1,141 @@
+
+.fil-container {
+    width: 270px;
+    min-height: 700px;
+    height: auto;
+    padding: 10px;
+    .filter-section {
+        width: 100%;
+        height: auto;
+        background: #F0FFFF;
+        border: 1px solid black;
+        position: relative; 
+        padding: 10px;
+        text-align: center;
+        .genres {
+            margin-bottom: 30px;
+            h1 {
+                margin-bottom: 5px;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 7px;
+                font-size: 1.2rem;
+            }
+            .genre-container {
+                text-align: left;
+                margin-top: 10px;
+                height: 180px;
+                overflow: auto;
+                label {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    .checkbox {
+                        appearance: none;
+                        background: white;
+                        height: 20px;
+                        width: 20px;
+                        border: 1px solid black;
+                        margin-right: 7px;
+                        &:checked:active {
+                            border: 1px solid lightblue;    
+                        }
+                        &:checked:after {
+                            content: '\2714';
+                            font-size: 14px;
+                            position: relative;
+                            left: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        .revenue {
+            margin-bottom: 30px;
+            label {
+                text-align: left;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin-bottom: 7px;
+                .radio {
+                    position: relative;
+                    appearance: none;
+                    background: white;
+                    height: 20px;
+                    border-radius: 50%;
+                    width: 20px;
+                    border: 1px solid black;
+                    margin-right: 7px;
+                    &:checked:active {
+                        border: 1px solid lightblue;
+                        border-radius: 50%;    
+                    }
+                    &:checked:after {
+                        content: ' ';
+                        background: grey;
+                        opacity: .4;
+                        position: absolute;
+                        left: 4px;
+                        top: 4px;
+                        height: 10px;
+                        width: 10px;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+        .languages {
+            margin-bottom: 30px;
+            h1 {
+                margin-bottom: 5px;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 7px;
+                font-size: 1.2rem;
+            }
+            .languages-container {
+                text-align: left;
+                margin-top: 10px;
+                height: 180px;
+                overflow: auto;
+                label {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    input[type="checkbox"] {
+                        appearance: none;
+                        background: white;
+                        height: 20px;
+                        width: 20px;
+                        border: 1px solid black;
+                        margin-right: 7px;
+                        &:checked:active {
+                            border: 1px solid lightblue;    
+                        }
+                        &:checked:after {
+                            content: '\2714';
+                            font-size: 14px;
+                            position: relative;
+                            left: 2px;
+                        }
+                    }
+                }
+            }
+        }
+        .release-date {
+            margin-bottom: 30px;
+            .release-container {
+                display: flex;
+                justify-content: space-between;
+                input {
+                    width: 45%;
+                    padding: 10px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

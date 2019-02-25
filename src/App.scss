@@ -1,0 +1,32 @@
+
+@import 'filter.scss';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  background: lightblue;
+  nav {
+    min-width: 200px;
+    li {
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0 15px;
+    }
+  }
+}
