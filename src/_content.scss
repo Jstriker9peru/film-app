@@ -33,15 +33,109 @@
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px;
-            img {
+            overflow: hidden;
+            &:hover {
+                .film-info {
+                    opacity: .85;
+                    .film-title {
+                        transform: translate3d(0,0,0);
+                        opacity: 1;
+                    }
+                }
+                .poster {
+                    transform: scale(1.2);
+                }
+            }
+            .poster {
                 width: 100%;
                 height: 100%;
+                transition: all .25s ease;
             }
             .film-info {
                 position: absolute;
+                background: #333;
                 top: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
                 color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                opacity: 0;
+                overflow: hidden;
+                .film-title {
+                    transform: translate3d(0,-100px,0);
+                    opacity: 0;
+                    background: #111;
+                    width: 100%;
+                    height: auto;
+                    min-height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1;
+                    transition: transform .2s ease-in-out;
+                    h3 {
+                        display: inline-block;
+                        margin: 2px 0 0;
+                        font-weight: 900;
+                        font-size: 1rem;
+                        text-transform: uppercase;
+                        color: #86ddf8;
+                    }
+                }
+                h4 {
+                    color: white;
+                }
+                .ratings {
+                    padding: 2px;
+                    position: relative;
+                    background: #080000; 
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin: 0;
+                    .category {
+                        width: 50%;
+                        text-align: left;
+                        padding-left: 10px;
+                        height: 20px;
+                        display: flex;
+                        align-items: center;
+                        .left {
+                            position: relative;
+                            left: 11px;
+                        }
+                        .right {
+                            position: relative;
+                            left: -7px;
+                        }
+                        h5 {
+                            font-size: .7rem;
+                            .extra {
+                                font-size: .8rem;
+                                color: #86ddf8;
+                                font-weight: bolder;
+                            }
+                        }
+                    }
+                    .runtime {
+                        width: 100%;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        h5 {
+                            position: relative;
+                            left: -13px;
+                            font-size: .9rem;
+                            margin: 0;
+                        }
+                    }
+                }
             }
         }
     }
 }
+

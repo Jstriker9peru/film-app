@@ -23,13 +23,29 @@ export default class Filter extends Component {
             </div>
             <div className="films-container">
                 <div className="film">
-                    <img src="https://images-na.ssl-images-amazon.com/images/I/51k98elC6mL.jpg" alt="The Dark Knight poster" />
+                    <img className="poster" src="https://images-na.ssl-images-amazon.com/images/I/51k98elC6mL.jpg" alt="The Dark Knight poster" />
                     <div className="film-info">
-                        <div>
+                        <div className="film-title">
                             <h3>The Dark Knight Rises</h3>
                         </div>
                         <h4>The Legend Ends</h4>
-                        <div></div>
+                        <div className="ratings">
+                            <div className="category runtime">
+                                <h5><i className="far fa-clock extra"></i> 2:05</h5>
+                            </div>
+                            <div className="category">
+                                <h5 className="left"><span className="extra">Imdb:</span> 7.5/10</h5>
+                            </div>
+                            <div className="category">
+                                <h5 className="right"><span className="extra">Revenue:</span> $2.0B</h5>
+                            </div>
+                            <div className="category">
+                                <h5 className="left"><span className="extra">Score:</span> 31.62</h5>
+                            </div>
+                            <div className="category">
+                                <h5 className="right"><span className="extra">Language:</span> English</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
