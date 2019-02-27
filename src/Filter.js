@@ -10,35 +10,35 @@ export default class Filter extends Component {
             <input type="text" placeholder="Search for a Genre" />
             <div className="genre-container">
               <div className="genre-name">
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   All Genres
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Action
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Adventure
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Biopic
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Comedy
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Horror
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Romance
                 </label>
-                <label for="genre">
+                <label htmlFor="genre">
                   <input className="checkbox" type="checkbox" name="genre"/>
                   Sci-fi
                 </label>
@@ -79,39 +79,39 @@ export default class Filter extends Component {
             <input type="text" placeholder="Search for a Language" />
             <div className="languages-container">
               <div className="language">
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
-                <label for="language">
+                <label htmlFor="language">
                   <input type="checkbox" name="language"/>
                   English
                 </label>
@@ -124,8 +124,8 @@ export default class Filter extends Component {
           <div className="release-date">
             <h1>Release Date</h1>
             <div className="release-container">
-              <input type="text" value="Start date"></input>
-              <input type="text" value="End date"></input>
+              <input type="text" placeholder="Start date"></input>
+              <input type="text" placeholder="End date"></input>
             </div>
           </div>
           
