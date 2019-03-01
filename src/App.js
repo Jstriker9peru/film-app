@@ -68,7 +68,6 @@ class App extends Component {
     this.setState({
       [name]: value
     }, () => {
-      console.log(this.state);
       this.filteredData();
     })
   }
@@ -93,14 +92,20 @@ class App extends Component {
     let newData = this.state.movieDetails;
     let genreList = this.state.genreList;
 
-    genreList.forEach(genre => {
-      if (this.state[genre] === true) {
-          newData = this.state.filteredData.filter((item) => {
-            return item.genres.some(genreAv => genreAv.name === genre);
-          });
-      }
+
+    let allTrueGenres = genreList.filter(name => {
+      return this.state[name] === true;
     })
 
+    newData = this.state.movieDetails.filter(movie => {
+      return allTrueGenres.every(obj => {
+        return movie.genres.some(genre => {
+          return genre.name === obj;
+        })
+      })
+
+
+    })
 
     this.setState({
       filteredData: newData
