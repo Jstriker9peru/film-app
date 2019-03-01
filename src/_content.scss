@@ -88,6 +88,7 @@
                 }
                 h4 {
                     color: white;
+                    padding: 0 15px;
                 }
                 .ratings {
                     padding: 2px;
@@ -112,6 +113,7 @@
                         .right {
                             position: relative;
                             left: -7px;
+                            
                         }
                         h5 {
                             font-size: .7rem;
@@ -119,6 +121,10 @@
                                 font-size: .8rem;
                                 color: #86ddf8;
                                 font-weight: bolder;
+                            }
+                            .language {
+                                text-transform: uppercase;
+                                letter-spacing: .03rem;
                             }
                         }
                     }

@@ -1,47 +1,36 @@
 import React, { Component } from 'react';
 
 export default class Filter extends Component {
+  constructor(props) {
+    super(props)
+    this.genreLoop = this.genreLoop.bind(this);
+  }
+  genreLoop() {
+    let genreList = this.props.globalState.genreList;
+
+    return genreList.map((genre, index) => {
+      return (
+        <label htmlFor={genre} key={index}>
+          <input className="checkbox" type="checkbox" name={genre} onChange={this.props.change}/>
+          {genre}
+        </label>
+      )
+    })
+  }
   render() {
     return (
       <div className="fil-container">
         <div className="filter-section">
           <div className="genres">
             <h1>Genres</h1>
-            <input type="text" placeholder="Search for a Genre" />
+            <input type="text" name="genreSearch" placeholder="Search for a Genre" onChange={this.props.change} />
             <div className="genre-container">
               <div className="genre-name">
                 <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
+                  <input className="checkbox" type="checkbox" name="allGenres" onChange={this.props.change}/>
                   All Genres
                 </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Action
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Adventure
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Biopic
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Comedy
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Horror
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Romance
-                </label>
-                <label htmlFor="genre">
-                  <input className="checkbox" type="checkbox" name="genre"/>
-                  Sci-fi
-                </label>
+                {this.genreLoop()}
                 
               </div>
             </div>

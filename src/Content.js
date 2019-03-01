@@ -2,26 +2,23 @@ import React, { Component } from 'react';
 // import axios from 'axios';
 
 export default class Content extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: 'Jonathan',
-            movieData: [],
         }
         this.filmLoop = this.filmLoop.bind(this);
     }
    
     filmLoop() {
 
-        let movieData = this.props.globalState.movieRows;
-        let movieIds = this.props.globalState.ids;
-        
+        let filteredData = this.props.globalState.filteredData;
+       
+   
+        console.log(this.props.globalState);
 
-        console.log(movieIds);
-
-
-      
-        return movieData.map((movie, index) => {
+        return filteredData.map((movie, index) => {
+            
             return (
                 <div className="film" key={index}>
                     <img className="poster" src={`http://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="The Dark Knight poster" />
@@ -29,29 +26,34 @@ export default class Content extends Component {
                         <div className="film-title">
                             <h3>{movie.title}</h3>
                         </div>
-                        <h4>The Legend Ends</h4>
+                        <h4>{movie.tagline}</h4>
                         <div className="ratings">
                             <div className="category runtime">
-                                <h5><i className="far fa-clock extra"></i> 2:05</h5>
+                                <h5><i className="far fa-clock extra"></i> {movie.runtime} min</h5>
                             </div>
                             <div className="category">
                                 <h5 className="left"><span className="extra">Imdb:</span> 7.5/10</h5>
                             </div>
                             <div className="category">
-                                <h5 className="right"><span className="extra">Revenue:</span> $2.0B</h5>
+                                <h5 className="right"><span className="extra">Revenue:</span> 
+                                {
+                                    (movie.revenue > 1000000000) 
+                                    ? ` $${(movie.revenue / 1000000000).toFixed(1)}B` 
+                                    : ` $${Math.floor(movie.revenue / 1000000)}M`
+                                }</h5>
                             </div>
                             <div className="category">
                                 <h5 className="left"><span className="extra">Score:</span> 31.62</h5>
                             </div>
                             <div className="category">
-                                <h5 className="right"><span className="extra">Language:</span> English</h5>
+                                <h5 className="right"><span className="extra">Language:</span><span className="language"> {movie.original_language}</span> </h5>
                             </div>
                         </div>
                     </div>
                 </div>
                                 
             )
-        });
+        });    
     }
 
     render() {
@@ -76,8 +78,9 @@ export default class Content extends Component {
                 </select>
             </div>
             <div className="films-container">
-                
+            
                 {this.filmLoop()}
+         
                 
             </div>
         </div>
