@@ -40,24 +40,32 @@ export default class Filter extends Component {
           <div className="revenue">
             <h1>Revenue</h1>
             <label>
-              <input className="radio" type="radio" name="rev" />
-              1M-10M
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="All" />
+              All
             </label>
             <label>
-              <input className="radio" type="radio" name="rev" />
-              1M-10M
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="20" />
+              Less than 20M
             </label>
             <label>
-              <input className="radio" type="radio" name="rev" />
-              1M-10M
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="100" />
+              20M-100M
             </label>
             <label>
-              <input className="radio" type="radio" name="rev" />
-              1M-10M
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="250" />
+              100M-250M
             </label>
             <label>
-              <input className="radio" type="radio" name="rev" />
-              1M-10M
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="500" />
+              250M-500M
+            </label>
+            <label>
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="1B" />
+              500M-1B
+            </label>
+            <label>
+              <input className="radio" type="radio" name="rev" onChange={this.props.change} value="1B+" />
+              Greater than 1B
             </label>
               
           </div>
@@ -113,7 +121,7 @@ export default class Filter extends Component {
           <div className="release-date">
             <h1>Release Date</h1>
             <div className="release-container">
-              <input type="text" placeholder="Start date"></input>
+              <input type="date" placeholder="Start date"></input>
               <input type="text" placeholder="End date"></input>
             </div>
           </div>

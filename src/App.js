@@ -59,11 +59,16 @@ class App extends Component {
   }
 
   change(event) {
-    let name = event.target.name;
-    let value = 
-      (event.target.type === 'checkbox')
-      ? event.target.checked 
-      : event.target.value;
+    let name, value;
+    name = event.target.name;
+    if (name === "rev") {
+      value = event.target.value;
+    } else {
+      value = 
+        (event.target.type === 'checkbox')
+        ? event.target.checked 
+        : event.target.value;
+    }
 
     this.setState({
       [name]: value
@@ -89,22 +94,53 @@ class App extends Component {
   }
 
   filteredData() {
+    let radioBtns = document.getElementsByClassName("radio");
     let newData = this.state.movieDetails;
     let genreList = this.state.genreList;
+    let min, max;
+    
 
+    console.log(radioBtns);
 
-    let allTrueGenres = genreList.filter(name => {
-      return this.state[name] === true;
-    })
-
-    newData = this.state.movieDetails.filter(movie => {
-      return allTrueGenres.every(obj => {
-        return movie.genres.some(genre => {
-          return genre.name === obj;
-        })
+    if (genreList.length > 0) {
+      let allTrueGenres = genreList.filter(name => {
+        return this.state[name] === true;
       })
+  
+      newData = this.state.movieDetails.filter(movie => {
+        return allTrueGenres.every(obj => {
+          return movie.genres.some(genre => {
+            return genre.name === obj;
+          })
+        })
+      });
+    }
 
+    if (this.state.rev === "All") {
+      min = 0;
+      max = 3000000000;
+    } else if (this.state.rev === "20") {
+      min = 0;
+      max = 20000000;
+    } else if (this.state.rev === "100") {
+      min = 20000000;
+      max = 100000000;
+    } else if (this.state.rev === "250") {
+      min = 100000000;
+      max = 250000000;
+    } else if (this.state.rev === "500") {
+      min = 250000000;
+      max = 500000000;
+    } else if (this.state.rev === "1B") {
+      min = 500000000;
+      max = 1000000000;
+    } else if (this.state.rev === "1B+") {
+      min = 1000000000;
+      max = 3000000000;
+    }
 
+    newData = newData.filter(movie => {
+      return movie.revenue < max && movie.revenue >= min;
     })
 
     this.setState({
